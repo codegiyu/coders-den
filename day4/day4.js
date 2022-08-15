@@ -1,26 +1,26 @@
-// let driverAge = Number(prompt('In what year were you born?', ''));
-// if (driverAge >= 18) {
-//     alert(`You are old enough to drive.`)
-// } else if (driverAge == 17) {
-//     alert(`You will be allowed to drive in ${18 - driverAge} year.`)
-// } else {
-//     alert(`You will be allowed to drive in ${18 - driverAge} years.`)
-// }
+let driverAge = Number(prompt('In what year were you born?', ''));
+if (driverAge >= 18) {
+    alert(`You are old enough to drive.`)
+} else if (driverAge == 17) {
+    alert(`You will be allowed to drive in ${18 - driverAge} year.`)
+} else {
+    alert(`You will be allowed to drive in ${18 - driverAge} years.`)
+}
 
 
-// let myAge = 26;
-// let yourAge = Number(prompt('Enter your age:', ''));
-// if (myAge - yourAge == 1) {
-//     alert(`I am ${myAge - yourAge}  year older than you`);
-// } else if (myAge - yourAge > 1) {
-//     alert(`I am ${myAge - yourAge}  years older than you`);
-// } else if (yourAge - myAge == 1 ) {
-//     alert(`I am ${yourAge - myAge}  year younger than you`);
-// } else if (yourAge - myAge > 1 ) {
-//     alert(`I am ${yourAge - myAge}  years younger than you`);
-// } else {
-//     alert(`We are the same age`);
-// }
+let myAge = 26;
+let yourAge = Number(prompt('Enter your age:', ''));
+if (myAge - yourAge == 1) {
+    alert(`I am ${myAge - yourAge}  year older than you`);
+} else if (myAge - yourAge > 1) {
+    alert(`I am ${myAge - yourAge}  years older than you`);
+} else if (yourAge - myAge == 1 ) {
+    alert(`I am ${yourAge - myAge}  year younger than you`);
+} else if (yourAge - myAge > 1 ) {
+    alert(`I am ${yourAge - myAge}  years younger than you`);
+} else {
+    alert(`We are the same age`);
+}
 
 
 let a = 2;
@@ -115,3 +115,36 @@ let dayType = (input) => {
     }
 }
 console.log(dayType('wedNesDay'));
+
+
+let daysInMonth = (input, year) => {
+    let month = input.toLowerCase();
+    let output = input.slice(0,1).toUpperCase() + input.slice(1, input.length).toLowerCase();
+    switch(true) {
+        case month === 'january':
+        case month === 'march':
+        case month === 'may':
+        case month === 'july':
+        case month === 'august':
+        case month === 'october':
+        case month === 'december':
+            return `${output} has 31 days.`;
+            break;
+        case month === 'april':
+        case month === 'june':
+        case month === 'september':
+        case month === 'november':
+            return `${output} has 30 days`;
+            break;
+        case (month === 'february' && (year % 4 != 0)):
+            return `${output} has 28 days.`;
+            break;
+        case (month === 'february' && (year % 4 == 0)):
+            return `${output} has 29 days because ${year} is a leap year.`;
+            break;
+        default:
+            return `${input} is not a valid month!`
+    }
+}
+
+console.log(daysInMonth('february', ))
