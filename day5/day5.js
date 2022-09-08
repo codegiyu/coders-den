@@ -1,29 +1,8 @@
-const countries = [
-    'Albania',
-    'Bolivia',
-    'Canada',
-    'Denmark',
-    'Ethiopia',
-    'Finland',
-    'Germany',
-    'Hungary',
-    'Ireland',
-    'Japan',
-    'Kenya'
-  ]
-  
-  const webTechs = [
-    'HTML',
-    'CSS',
-    'JavaScript',
-    'React',
-    'Redux',
-    'Node',
-    'MongoDB'
-  ]
+import {countries} from "./countries.js";
+import {webTechs} from "./webtechs.js";
 
   //Exercise Level 1
-
+console.log(countries);
   //Declare an empty array;
 
   let empty = [];
@@ -114,9 +93,9 @@ let filteredCom = []
  //Slice out the middle IT company or companies from the array
  let middVal = itCompanies.length % 2;
  let index = Math.floor(itCompanies.length/2);
- if(middVal == 1){
+ if (middVal == 1) {
   console.log(itCompanies.slice(index, index + 1));
- }else if (middVal == 0){
+ } else if (middVal == 0) {
   console.log(itCompanies.slice(index - 1, index + 1));
  }
 
@@ -203,9 +182,9 @@ console.log(max);
 let medianAge;
 let medianAgeIndex = Math.floor((sorted.length)/2);
 console.log(medianAgeIndex)
-if(sorted.length % 2 == 1){
+if (sorted.length % 2 == 1) {
   medianAge = sorted[medianAgeIndex];
-}else if(sorted.length % 2 == 0){
+} else if(sorted.length % 2 == 0) {
   medianAge = (sorted[medianAgeIndex - 1] + sorted[medianAgeIndex]) / 2;
 }
 console.log(medianAge);
