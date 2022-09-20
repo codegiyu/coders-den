@@ -52,13 +52,37 @@ console.log(randId())
 //    start with 0706, 0803, 0810, and 0906.Your function should return 
 //    'Valid MTN phone number' OR 'Invalid MTN phone number'
 
+
+
+const mtnChecker = str => /^0(706|803|810|906)\d{7}$/.test(str) 
+? 'Valid MTN phone number' : 'Invalid MTN phone number'
+
+console.log(mtnChecker('07061234567'))
+console.log(mtnChecker('08161234567'))
+console.log(mtnChecker('08101234567'))
+console.log(mtnChecker('081012345678'))
+console.log(mtnChecker('19061234567'))
+
 // 2. Google Meet meeting ids usually have 3 random letters, then 4 random letters, 
 //    then 3 random letter, separated by dashes, eg abc-defg-hij. Write a function 
 //    that checks if a meeting id is a valid Google Meet id. Your function should return 
 //    'Valid Meet ID' OR 'Invalid Meet ID'
 
+const meetIdChecker = str => /^[a-z]{3}-[a-z]{4}-[a-z]{3}$/.test(str) ? 'Valid Meet ID' : 'Invalid Meet ID'
+
+console.log(meetIdChecker('abc-defg-hij'))
+console.log(meetIdChecker('a3c-defg-hij'))
+console.log(meetIdChecker('abc-def-uhij'))
+console.log(meetIdChecker('abcd-efg-hij'))
+console.log(meetIdChecker('zxy-omns-rea'))
+
 // 3. Write a recursive function that takes in an array of numbers 
 //    and returns the product of all the numbers
+
+const arrayProduct = arr => arr.length == 1 ? arr[0] : arr[0] * arrayProduct(arr.slice(1, arr.length))
+
+console.log(arrayProduct([8, 4, 3]))
+console.log(arrayProduct([1, 2, 3, 4, 5, 6, 7]))
 
 // 4. An API fetch returns the following array of objects named data. Write a function 
 //    that will take in the array and return an array of objects with only name, population, 
@@ -139,6 +163,17 @@ result = [
             }
         ]
 
+const countriesData = arr => arr.map(item => {
+    return {
+        "name": item.name.official,
+        "population": item.population,
+        "capital": item.capital[0],
+        "currency": String(Object.keys(item.currencies)),
+        "flag": item.flags.png
+    }
+})
+
+console.log(countriesData(data))
 
 // const unique = sth => Array.isArray(sth) == true 
 // ? sth.filter((curr, idx, arr) => curr != arr[idx+1]) 
@@ -153,4 +188,6 @@ result = [
 // const integerArray = n => n == 1 ? [n] : [n, ...integerArray(n-1)]
 
 // console.log(integerArray(5))
-
+// ID48902633
+const edward = () => 10 + Math.floor(Math.random() * 11)
+console.log(edward())

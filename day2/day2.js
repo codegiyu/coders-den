@@ -26,8 +26,13 @@ console.log("30 Days of".concat(" ").concat("JavaScript"));
 console.log(challenge.repeat(2));
 
 //  Level 2
-let quote1 = "The quote 'There is no exercise better for the heart than reaching down and lifting people up.' by John Holmes teaches us to help one another."
+let quote1 = "The quote 'There is no exercise better for the heart than reaching down and lifting people up."
 console.log(quote1);
+
+console.log(/no/.test(quote1))
+console.log(quote1.search(/ /))
+console.log(quote1.match(/the/))
+
 
 let quote2 = '"Love is not patronizing and charity isn\'t about pity, it is about love. Charity and love are the same -- with charity you give love, so don\'t just give money but reach out your hand instead."';
 console.log(quote2);
