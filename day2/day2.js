@@ -64,28 +64,35 @@ console.log(because.match(/because/gi).length);
 
 const sentence = '%I $am@% a %tea@cher%, &and& I lo%#ve %te@a@ching%;. The@re $is no@th@ing; &as& mo@re rewarding as educa@ting &and& @emp%o@weri@ng peo@ple. ;I found tea@ching m%o@re interesting tha@n any ot#her %jo@bs. %Do@es thi%s mo@tiv#ate yo@u to be a tea@cher!? %Th#is 30#Days&OfJavaScript &is al@so $the $resu@lt of &love& of tea&ching';
 const cleanedSentence = sentence.replace(/[@#%&;!$]/g, "");
-let onlySentenceWords = sentence.replace(/[@#%&;!$?.,]/g, "");
-console.log(onlySentenceWords);
-let sentenceWords = onlySentenceWords.split(' ');
-let uniqueSentenceWords = [];
-let uniqueSentenceWordsFrequencies = [];
-for (let i = 0; i < sentenceWords.length; i++) {
-    if (!uniqueSentenceWords.includes(sentenceWords[i])) {
-        uniqueSentenceWords.push(sentenceWords[i]);
-    }
-}
-console.log(uniqueSentenceWords);
-for (let i = 0; i < uniqueSentenceWords.length; i++) {
-    let wordSearch = new RegExp(`\\b${uniqueSentenceWords[i]}\\b`, 'gi');
-    uniqueSentenceWordsFrequencies.push(onlySentenceWords.match(wordSearch).length);
-}
-console.log(uniqueSentenceWordsFrequencies);
-let maxFrequency = Math.max(...uniqueSentenceWordsFrequencies);
-console.log(Math.max(...uniqueSentenceWordsFrequencies));
-let maxFrequencyIndex = uniqueSentenceWordsFrequencies.indexOf(maxFrequency);
-console.log(uniqueSentenceWordsFrequencies.indexOf(maxFrequency));
-let mostRepeatedWord = uniqueSentenceWords[maxFrequencyIndex];
-console.log(mostRepeatedWord);
+// let onlySentenceWords = sentence.replace(/[@#%&;!$?.,]/g, "");
+// console.log(onlySentenceWords);
+// let sentenceWords = onlySentenceWords.split(' ');
+// let uniqueSentenceWords = [];
+// let uniqueSentenceWordsFrequencies = [];
+// for (let i = 0; i < sentenceWords.length; i++) {
+//     if (!uniqueSentenceWords.includes(sentenceWords[i])) {
+//         uniqueSentenceWords.push(sentenceWords[i]);
+//     }
+// }
+// console.log(uniqueSentenceWords);
+// for (let i = 0; i < uniqueSentenceWords.length; i++) {
+//     let wordSearch = new RegExp(`\\b${uniqueSentenceWords[i]}\\b`, 'gi');
+//     uniqueSentenceWordsFrequencies.push(onlySentenceWords.match(wordSearch).length);
+// }
+// console.log(uniqueSentenceWordsFrequencies);
+// let maxFrequency = Math.max(...uniqueSentenceWordsFrequencies);
+// console.log(Math.max(...uniqueSentenceWordsFrequencies));
+// let maxFrequencyIndex = uniqueSentenceWordsFrequencies.indexOf(maxFrequency);
+// console.log(uniqueSentenceWordsFrequencies.indexOf(maxFrequency));
+// let mostRepeatedWord = uniqueSentenceWords[maxFrequencyIndex];
+// console.log(mostRepeatedWord);
+
+let wordObject = sentence.replace(/[@#%&;!$?.,]/g, "").split(' ').reduce((acc, curr) => {
+    acc[curr] = (acc[curr] || 0) + 1;
+    return acc;
+},{})
+let modeWord = Object.entries(wordObject).reduce((acc, curr) => acc[1] >= curr[1] ? acc : curr)[0]
+console.log(modeWord)
 
 const income = 'He earns 5000 euro from salary per month, 10000 euro annual bonus, 15000 euro online courses per month.'
 let [monthlySalary, annualBonus, monthlyCourse] = income.match(/\d+/g);

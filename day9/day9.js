@@ -1,7 +1,13 @@
 // Exercises: Level 1
 const countries = ['Finland', 'Sweden', 'Denmark', 'Norway', 'IceLand'];
 const names = ['Asabeneh', 'Mathias', 'Elias', 'Brook'];
+
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// const nums = [1, 2];
+// const maxThree = arr => [...new Set(arr)].sort((a,b) => b - a)[2] || [...new Set(arr)].sort((a,b) => b - a)[0];
+// console.log(maxThree(numbers));
+// console.log(maxThree(nums));
+
 const products = [
   { product: 'banana', price: 3 },
   { product: 'mango', price: 6 },
@@ -130,8 +136,11 @@ console.log(categorizeCountries('d'));
 // }
 // console.log(countriesStart());
 
-// 5. Declare a getFirstTenCountries function and return an array of ten countries. Use different functional programming to work on the countries.js array
+// 5. Declare a getFirstTenCountries function and return an array of ten countries. 
+//    Use different functional programming to work on the countries.js array
+
 // 6. Declare a getLastTenCountries function which which returns the last ten countries in the countries array.
+
 // 7. Find out which letter is used many times as initial for a country name from the countries array (eg. Finland, Fiji, France etc)
 
 
@@ -143,4 +152,8 @@ console.log(categorizeCountries('d'));
 
 // 3. Use countries_data.js file create a function which create the ten most populated countries
 
-// 4. Try to develop a program which calculate measure of central tendency of a sample(mean, median, mode) and measure of variability(range, variance, standard deviation). In addition to those measures find the min, max, count, percentile, and frequency distribution of the sample. You can create an object called statistics and create all the functions which do statistical calculations as method for the statistics object. Check the output below.
+// 4. Try to develop a program which calculate measure of central tendency of a sample(mean, median, mode) 
+//    and measure of variability(range, variance, standard deviation). In addition to those measures, 
+//    find the min, max, count, percentile, and frequency distribution of the sample. 
+//    You can create an object called statistics and create all the functions which do statistical calculations 
+//    as method for the statistics object. Check the output below.

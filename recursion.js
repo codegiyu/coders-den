@@ -107,3 +107,34 @@ console.log(upper(fruits))
 console.log(fruits)
 
 //so you can see that the function upper() doesn't mutate the array
+
+
+const fizzBuzz = () => {
+    let arr = [];
+    for (let i = 1; i < 101; i++) {
+        if (i%3 == 0 && i%5 == 0) {
+            arr.push('fizzbuzz')
+        } else if (i%3 == 0) {
+            arr.push('fizz')
+        } else if (i%5 == 0) {
+            arr.push('buzz')
+        } else {
+            arr.push(i)
+        }
+    }
+    console.log(arr)
+}
+
+fizzBuzz()
+
+console.log(5 > 7 || '' || 0 || null)
+
+let rand = [0,1,2,3,4,5,6,7,8,9]
+let addedId = 'ID'
+for (let i = 1; i < rand.length; i++) {
+    let mercy = rand[Math.floor(Math.random() * 5)]
+    addedId += mercy
+}
+
+console.log(addedId)
+console.log(...rand.slice(-1))
