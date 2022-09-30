@@ -191,3 +191,36 @@ console.log(countriesData(data))
 // ID48902633
 const edward = () => 10 + Math.floor(Math.random() * 11)
 console.log(edward())
+
+const flipString = str => {
+    if (str.length == 1) {
+        return str
+    }
+    return str.slice(-1) + flipString(str.slice(0, -1))
+}
+
+console.log(flipString("3294841232"))
+console.log(String(232148492).match(/\d{1,3}/g).join())
+console.log(String(232148492).slice(0,2))
+console.log(String(232148492).match(/\d{1,3}/g).join())
+
+// const comma = num => {
+//     return String(num).slice(0,String(num).length%3) + 
+
+//     // return num.toLocaleString()
+// }
+
+console.log(comma(123456789))
+console.log(comma(12345678))
+console.log(comma(1234569))
+
+let ar = [1,2,3]
+const f = arr => {
+    let bc = ``
+    for(let i = 0; i < arr.length; i++) {
+        bc += `come here ${arr[i]} `
+    }
+    return bc
+}
+let ra = `I am ${f(ar)} years`
+console.log(ra)

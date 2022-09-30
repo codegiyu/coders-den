@@ -1,11 +1,37 @@
 const countdown = number => {
-    if (number == 1) {
+    console.log(number)
+    if (number === 1) {
         return [1]
     }
     return [number, ...countdown(number - 1)]
 }
 
-console.log(countdown(8))
+const countDownTwo = number => {
+    let arr = []
+    if (number === 1) {
+        arr.push(number)
+        return arr
+    } else {
+        arr.push(number)
+        arr.push(...countDownTwo(number - 1))
+        return arr
+    }
+}
+
+console.log(countdown(4))
+console.log(countDownTwo(4))
+
+let arr = [2,3]
+arr.push(4)
+arr.push(5)
+console.log(arr)
+let array = [2, 3]
+
+let four = () => 4
+let five = () => 5
+let fourAndFive = () => [four(), five()]
+console.log(fourAndFive())
+console.log([2, 3, ...fourAndFive()])
 
 const factorial = n => {
     if (n == 1) {
@@ -34,42 +60,25 @@ const flipString = str => {
 
 console.log(flipString("click"))
 
-const countUp = (a, n) => {
-    if (a == n - 1){
-        return [a]
-    } else {
-        return [a, ...countUp(a + 1, n)]
-    }
-}
-console.log(countUp(1, 10))
-
-const secondCountUp = n => {
+const countUp = n => {
     if (n <= 1) {
         return [n]
     }
-    return [...secondCountUp(n - 1), n]
+    return [...countUp(n - 1), n]
 }
-console.log(secondCountUp(9))
+console.log(countUp(9))
 
-const fib = n => {
+const F = n => n in [0, 1] ? n : F(n-1) + F(n-2)
 
-    if (n in [0, 1]) {
-        return n
-    } else if (n < 0) {
-        return 'Please input a positive integer'
-    }
-    return fib(n-1) + fib(n-2)
-}
-
-console.log(fib(4))
+console.log(F(5))
 
 0, 1, 1, 2, 3, 5, 8, 13, 21 
 
-fib(4)
-fib(3) + fib(2) 
-fib(2) + fib(1) + fib(1) + fib(0)
-fib(1) + fib(0) + 1 + 1 + 0
-1 + 0 + 1 + 1 + 0
+// fib(4)
+// fib(3) + fib(2) 
+// fib(2) + fib(1) + fib(1) + fib(0)
+// fib(1) + fib(0) + 1 + 1 + 0
+// 1 + 0 + 1 + 1 + 0
 
 
 const oddNumbersOnly = (start, end) => {

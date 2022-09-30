@@ -9,7 +9,7 @@ console.log(quote1.match(/\b[a-z]{3}\b/gi))
 console.log(quote1)
 const checkPhoneNum = str => /^0(706|803|810|906)\d{7}$/.test(str) ? 'Valid MTN phone number' : 'Invalid MTN phone number'
 console.log(checkPhoneNum('08038323847'))
-
+console.log([...quote1])
 // \b - word bounders
 // \d - number
 // \D - non-number

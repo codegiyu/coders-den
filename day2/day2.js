@@ -98,6 +98,7 @@ let wordObject = sentence.replace(/[@#%&;!$?.,]/g, "").split(' ').reduce((acc, c
 },{})
 let modeWord = Object.entries(wordObject).reduce((acc, curr) => acc[1] >= curr[1] ? acc : curr)[0]
 console.log(modeWord)
+console.log(wordObject)
 
 const income = 'He earns 5000 euro from salary per month, 10000 euro annual bonus, 15000 euro online courses per month.'
 let [monthlySalary, annualBonus, monthlyCourse] = income.match(/\d+/g);
