@@ -144,7 +144,27 @@ const data =  [
                     },
                 }
             ]
+    let namevar = {
+        'name1': "Giyu",
+        'name2': 'Merit',
+        'name3': 'Creed',
+        7: 'Natacha',
+        'name5': 'Clint',
+        'name6': 'Viktor',
+    }
 
+for (let name in data) {
+    console.log(data[name])
+}
+
+console.log(Object.keys(namevar))
+console.log(Object.values(namevar))
+console.log(Object.entries(namevar))
+
+
+let ex = []
+data.forEach(item => ex.push(item['name']['common']))
+console.log(ex)
 result = [
             {
                 "name": "United Arab Emirates",
@@ -210,11 +230,12 @@ console.log(String(232148492).match(/\d{1,3}/g).join())
 //     // return num.toLocaleString()
 // }
 
-console.log(comma(123456789))
-console.log(comma(12345678))
-console.log(comma(1234569))
+// console.log(comma(123456789))
+// console.log(comma(12345678))
+// console.log(comma(1234569))
 
-let ar = [1,2,3]
+let ar = [1,2,3,4,5,6]
+console.log([7,8, ...ar])
 const f = arr => {
     let bc = ``
     for(let i = 0; i < arr.length; i++) {
@@ -224,3 +245,124 @@ const f = arr => {
 }
 let ra = `I am ${f(ar)} years`
 console.log(ra)
+
+let empty = [], i = 0;
+// for(let i = 0; i < ar.length; i++)
+// for (let number of ar) {
+//     if (number % 2 == 0) empty.push(number)
+// }
+while (i < 7){
+    i++
+} 
+// while (i < -7)
+// console.log(ar.entries())
+console.log(i)
+
+
+let a = 'JavaScript' 
+let b = 10 
+function letsLearnScope() {
+//   console.log(a, b) 
+  let c = 30
+  if (true) {
+    
+    
+    var a = 'Python'
+    let b = 20
+    let d = 40
+    console.log(a, b, c) 
+  }
+  
+  console.log(a, b) 
+  return 7
+}
+console.log(letsLearnScope().toString())
+// console.log(a, b)
+
+
+let utr = {
+    firstName: 'Asabeh',
+    lastName: 'Yeteh',
+}
+
+const person = {
+    firstName: 'Asabeneh',
+    lastName: 'Yetayeh',
+    age: 250,
+    country: 'Finland',
+    city: 'Helsinki',
+    skills: [
+      'HTML',
+      'CSS',
+      'JavaScript',
+      'React',
+      'Node',
+      'MongoDB',
+      'Python',
+      'D3.js',
+    ],
+    getFullName: function () {
+      return `${this.firstName} ${this.lastName}`
+    },
+  }
+person.firstName = 'Me'
+
+let newObj = {...utr, lastName: 'Finland'}       //Object.assign({}, utr)
+console.log(newObj)
+//   localStorage.setItem('user', 'Giyu')
+  
+//   console.log(person.getFullName())
+
+  console.log((function(arr, sum = 0) {
+    // let sum = 0
+    for (let i = 0; i< arr.length; i++) {
+        sum += arr[i]
+    }
+    return sum
+  })([1,2,3,4,5], 6))
+
+//   console.log(addStuff([1,2,3,4], 5))
+
+let todayArr = ['nigeria', 'ghana', 'usa', 'sweden', 'france', 'australia']
+
+let [s, ...ups] = ['nigeria', 'ghana', 'usa', 'sweden', 'france', 'australia']
+
+console.log(ups)
+
+const fullStack = [['HTML', 'CSS', 'JS', 'React'], ['Node', 'Express', 'MongoDB']]
+
+for (let [one, two, three,] of fullStack) {
+    console.log(one, two, three)
+}
+
+function names([[one, two, three], [four, five, six]]) {
+    console.log(one, two, three, four, five, six)
+}
+names(fullStack)
+
+const rectangle = {
+    width: 20,
+    height: 10,
+    extra: {
+        perimeter: 60,
+        area: 200
+    }
+  
+}
+console.table(rectangle)
+  
+  let { width: w, height: h, extra, extra: {perimeter, area} } = rectangle
+  console.log(w, h, perimeter, area, extra)
+
+  let todayNewArr = [...todayArr]
+  console.log(...todayNewArr)
+ let myName = 'CodeGiyu'
+  console.log(myName.split(''))
+
+  let numbers = [1,3,5,7,9], numbees = []
+
+  numbers.map((item, idx, buy) => {
+    numbees.push(buy[buy.length - 1] - item + idx)
+  })
+
+  console.log(numbees)

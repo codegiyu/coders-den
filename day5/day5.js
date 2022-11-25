@@ -1,6 +1,6 @@
-import {countries} from "./countries.js";
+import countries from "./countries.js";
 import {webTechs} from "./webtechs.js";
-
+console.log(countries);
   //Exercise Level 1
 console.log(countries);
   //Declare an empty array;

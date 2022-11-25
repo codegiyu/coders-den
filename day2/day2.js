@@ -68,7 +68,8 @@ console.log(loveQuote.match(/love/gi).length);
 console.log(because.match(/because/gi).length);
 
 const sentence = '%I $am@% a %tea@cher%, &and& I lo%#ve %te@a@ching%;. The@re $is no@th@ing; &as& mo@re rewarding as educa@ting &and& @emp%o@weri@ng peo@ple. ;I found tea@ching m%o@re interesting tha@n any ot#her %jo@bs. %Do@es thi%s mo@tiv#ate yo@u to be a tea@cher!? %Th#is 30#Days&OfJavaScript &is al@so $the $resu@lt of &love& of tea&ching';
-const cleanedSentence = sentence.replace(/[@#%&;!$]/g, "");
+const cleanedSentence = sentence.replace(/[^a-z0-9 ]/gi, "");
+console.log(cleanedSentence)
 // let onlySentenceWords = sentence.replace(/[@#%&;!$?.,]/g, "");
 // console.log(onlySentenceWords);
 // let sentenceWords = onlySentenceWords.split(' ');
@@ -92,7 +93,7 @@ const cleanedSentence = sentence.replace(/[@#%&;!$]/g, "");
 // let mostRepeatedWord = uniqueSentenceWords[maxFrequencyIndex];
 // console.log(mostRepeatedWord);
 
-let wordObject = sentence.replace(/[@#%&;!$?.,]/g, "").split(' ').reduce((acc, curr) => {
+let wordObject = sentence.replace(/[@#%&;!$?.,]/g, "").split(' ').reduce((acc, curr, idx, arr) => {
     acc[curr] = (acc[curr] || 0) + 1;
     return acc;
 },{})

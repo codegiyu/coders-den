@@ -143,17 +143,18 @@ let personAccount = {
     accountInfo: function() {
        return `${this.firstName} ${this.lastName}'s account has a balance of ₦${this.accountBalance()}`
     },
-    addIncome: function(money) {
-        this.incomes.push(parseInt(money))
+    addIncome: function(money, month) {
+        this.incomes.push([Number(money), month])
     },
-    addExpense: function(money) {
-        this.expenses.push(parseInt(money))
+    addExpense: function(money, month) {
+        this.expenses.push([Number(money), month])
     },
     accountBalance: function() {
         return this.totalIncome() - this.totalExpense()
     }
 };
-console.log(personAccount.accountInfo());
+personAccount.addIncome([400000])
+console.log(personAccount.totalIncome());
 
 // 2. Imagine you are getting the above users collection from a MongoDB database. 
 const users = [
