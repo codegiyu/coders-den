@@ -8,32 +8,29 @@ let circle = document.getElementById("circle");
 let message = document.getElementById("message");
 let planetName = document.getElementById("planet-name");
 let weight = document.getElementById("weight");
-let planets = ["MERCURY", "VENUS", "EARTH", "MOON", "MARS", "JUPITER", "SATURN", "URANUS", "NEPTUNE","PLUTO"];
-let planetSources = ["./images/mercury.png", "./images/venus.png", "./images/earth.png", "./images/moon.png", "./images/mars.png", 
-                    "./images/jupiter.png", "./images/saturn.png", "./images/uranus.png", "./images/neptune.png", "./images/pluto.png"];
-let planetRatios = {
-    "MERCURY": 3.724, 
-    "VENUS": 8.918, 
-    "EARTH": 9.8, 
-    "MOON": 1.627, 
-    "MARS": 7.84, 
-    "JUPITER": 22.932, 
-    "SATURN": 10.388, 
-    "URANUS": 9.016, 
-    "NEPTUNE": 11.662, 
-    "PLUTO": 0.588
-}
+let planets = {
+    "MERCURY": ["./images/mercury.png", 3.724], 
+    "VENUS": ["./images/venus.png", 8.918], 
+    "EARTH": ["./images/earth.png", 9.8], 
+    "MOON": ["./images/moon.png", 1.627], 
+    "MARS": ["./images/mars.png", 7.84], 
+    "JUPITER": ["./images/jupiter.png", 22.932], 
+    "SATURN": ["./images/saturn.png", 10.388], 
+    "URANUS": ["./images/uranus.png", 9.016], 
+    "NEPTUNE": ["./images/neptune.png", 11.662],
+    "PLUTO": ["./images/pluto.png", 0.588]
+};
+
 let massInput;
 
 const loadOptions = () => {
-    let options = planets.map((item) => `<option value="${item}" class="font-medium text-black">${item}</option>`).join("")
+    let options = Object.keys(planets).map((item) => `<option value="${item}" class="font-medium text-black">${item}</option>`).join("")
     select.innerHTML += options
     return window.removeEventListener("load", loadOptions)
 }
 
 const changeImage = () => {
-    let index = planets.findIndex(item => item === select.value)
-    planetImg.src = planetSources[index]
+    planetImg.src = planets[select.value][0]
 }
 
 const handleClick = () => {
@@ -41,13 +38,11 @@ const handleClick = () => {
         textContainer.classList.replace("hidden", "flex")
         if (mass.value === "" || mass.value === "0" || mass.value.toLowerCase === "zero") {
             message.textContent = "Mass is required"
-            console.log("just mass")
             if (!circle.classList.contains("hidden")) circle.classList.add("hidden")
             if (!select.value) planetContainer.classList.add("hidden")
         } else if (!select.value) {
             planetContainer.classList.add("hidden")
             message.textContent = "You didn't choose a planet yet"
-            console.log("just planet")
             if (!circle.classList.contains("hidden")) circle.classList.add("hidden")
         } else if (mass.value != "" && words(mass.value) != "Invalid" && select.value) {
             massInput = words(mass.value)
@@ -55,18 +50,14 @@ const handleClick = () => {
             message.textContent = "The weight of the object on"
             planetName.textContent = select.value
             circle.classList.remove("hidden")
-            weight.textContent = `${(massInput * planetRatios[select.value]).toFixed(2)} N`
-            console.log((massInput))
-            console.log("main")
+            weight.textContent = `${(massInput * planets[select.value][1]).toFixed(2)} N`
         } else {
             message.textContent = "Mass entered is invalid"
-            console.log("invalid")
             if (!circle.classList.contains("hidden")) circle.classList.add("hidden")
         }
     } catch (error) {
         message.textContent = error.message
         if (!circle.classList.contains("hidden")) circle.classList.add("hidden")
-        console.log("error")
     }
 }
 

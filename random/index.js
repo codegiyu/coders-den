@@ -73,6 +73,7 @@ const words = str => {
         "and": "and",
     }
     let wordsArr = str.split(" ")
+    console.log(wordsArr)
     if (wordsArr.some(word => numbersObj[word] == undefined)) return "Invalid"
     // let available = {
     //     hundred: [1, str.indexOf("hundred") != -1 ? str.indexOf("hundred") : null],
@@ -100,6 +101,7 @@ const words = str => {
         } else {
             acc.push(numbersObj[curr])
         }
+        console.log(acc)
         return acc
     }, [])
 
@@ -107,8 +109,10 @@ const words = str => {
 }
 // console.log(words("10"))
 // console.log(words("ten thousand"))
-console.log(words("one hundred million ten thousand and forty seven"))
-console.log(words("one 100"))
+// console.log(words("one hundred million ten thousand and forty seven"))
+// console.log(words("one 100"))
+// console.log(words("seventy fifteen"))
+console.log(words("one thousand five hundred"))
 
 let arr = [1]
 if (5 > arr[arr.length - 1]) arr.push(5)
