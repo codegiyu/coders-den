@@ -108,7 +108,7 @@ console.log(circumferenceOfCircle);
 alert(`The area of your circle is ${areaOfCircle} and its circumference is ${circumferenceOfCircle}`);
 
 let linearSlopeCalc = (y, m, c) => {
-    let slope = m;
+    let slope = m/y;
     let yIntercept = c/y;
     let xIntercept = -c/m;
 
@@ -192,11 +192,11 @@ if(drivingCriteria >= 18){
 let userAge = Number(prompt('How many years have you lived?', ''));
 let oneYearInsecs = 60 * 60 * 24 * 365;
 if (userAge < 100) {
-    alert(`You lived ${userAge * oneYearInsecs} seconds. You have ${(100 - userAge) * oneYearInsecs} left to live. Have fun😉`);
+    alert(`You have lived ${userAge * oneYearInsecs} seconds. You have ${(100 - userAge) * oneYearInsecs} left to live. Have fun😉`);
 } else if (userAge == 100) {
-    alert(`You lived ${userAge * oneYearInsecs} seconds. You have surpassed your expected lifespan by ${(userAge - 100) * oneYearInsecs} seconds`);
+    alert(`You have lived ${userAge * oneYearInsecs} seconds. You have surpassed your expected lifespan by ${(userAge - 100) * oneYearInsecs} seconds`);
 } else {
-    alert(`You lived ${userAge * oneYearInsecs} seconds. Talk true Boss. How you do am?`)
+    alert(`You have lived ${userAge * oneYearInsecs} seconds. Talk true Boss. How you do am?`)
 }
 
 
