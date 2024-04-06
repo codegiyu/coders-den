@@ -26,8 +26,13 @@ console.log("30 Days of".concat(" ").concat("JavaScript"));
 console.log(challenge.repeat(2));
 
 //  Level 2
-let quote1 = "The quote 'There is no exercise better for the heart than reaching down and lifting people up.' by John Holmes teaches us to help one another."
+let quote1 = "The quote 'There is no exercise better for the heart than reaching down and lifting people up."
 console.log(quote1);
+
+console.log(/no/.test(quote1))
+console.log(quote1.search(/ /))
+console.log(quote1.match(/the/))
+
 
 let quote2 = '"Love is not patronizing and charity isn\'t about pity, it is about love. Charity and love are the same -- with charity you give love, so don\'t just give money but reach out your hand instead."';
 console.log(quote2);
@@ -63,29 +68,38 @@ console.log(loveQuote.match(/love/gi).length);
 console.log(because.match(/because/gi).length);
 
 const sentence = '%I $am@% a %tea@cher%, &and& I lo%#ve %te@a@ching%;. The@re $is no@th@ing; &as& mo@re rewarding as educa@ting &and& @emp%o@weri@ng peo@ple. ;I found tea@ching m%o@re interesting tha@n any ot#her %jo@bs. %Do@es thi%s mo@tiv#ate yo@u to be a tea@cher!? %Th#is 30#Days&OfJavaScript &is al@so $the $resu@lt of &love& of tea&ching';
-const cleanedSentence = sentence.replace(/[@#%&;!$]/g, "");
-let onlySentenceWords = sentence.replace(/[@#%&;!$?.,]/g, "");
-console.log(onlySentenceWords);
-let sentenceWords = onlySentenceWords.split(' ');
-let uniqueSentenceWords = [];
-let uniqueSentenceWordsFrequencies = [];
-for (let i = 0; i < sentenceWords.length; i++) {
-    if (!uniqueSentenceWords.includes(sentenceWords[i])) {
-        uniqueSentenceWords.push(sentenceWords[i]);
-    }
-}
-console.log(uniqueSentenceWords);
-for (let i = 0; i < uniqueSentenceWords.length; i++) {
-    let wordSearch = new RegExp(`\\b${uniqueSentenceWords[i]}\\b`, 'gi');
-    uniqueSentenceWordsFrequencies.push(onlySentenceWords.match(wordSearch).length);
-}
-console.log(uniqueSentenceWordsFrequencies);
-let maxFrequency = Math.max(...uniqueSentenceWordsFrequencies);
-console.log(Math.max(...uniqueSentenceWordsFrequencies));
-let maxFrequencyIndex = uniqueSentenceWordsFrequencies.indexOf(maxFrequency);
-console.log(uniqueSentenceWordsFrequencies.indexOf(maxFrequency));
-let mostRepeatedWord = uniqueSentenceWords[maxFrequencyIndex];
-console.log(mostRepeatedWord);
+const cleanedSentence = sentence.replace(/[^a-z0-9 ]/gi, "");
+console.log(cleanedSentence)
+// let onlySentenceWords = sentence.replace(/[@#%&;!$?.,]/g, "");
+// console.log(onlySentenceWords);
+// let sentenceWords = onlySentenceWords.split(' ');
+// let uniqueSentenceWords = [];
+// let uniqueSentenceWordsFrequencies = [];
+// for (let i = 0; i < sentenceWords.length; i++) {
+//     if (!uniqueSentenceWords.includes(sentenceWords[i])) {
+//         uniqueSentenceWords.push(sentenceWords[i]);
+//     }
+// }
+// console.log(uniqueSentenceWords);
+// for (let i = 0; i < uniqueSentenceWords.length; i++) {
+//     let wordSearch = new RegExp(`\\b${uniqueSentenceWords[i]}\\b`, 'gi');
+//     uniqueSentenceWordsFrequencies.push(onlySentenceWords.match(wordSearch).length);
+// }
+// console.log(uniqueSentenceWordsFrequencies);
+// let maxFrequency = Math.max(...uniqueSentenceWordsFrequencies);
+// console.log(Math.max(...uniqueSentenceWordsFrequencies));
+// let maxFrequencyIndex = uniqueSentenceWordsFrequencies.indexOf(maxFrequency);
+// console.log(uniqueSentenceWordsFrequencies.indexOf(maxFrequency));
+// let mostRepeatedWord = uniqueSentenceWords[maxFrequencyIndex];
+// console.log(mostRepeatedWord);
+
+let wordObject = sentence.replace(/[@#%&;!$?.,]/g, "").split(' ').reduce((acc, curr, idx, arr) => {
+    acc[curr] = (acc[curr] || 0) + 1;
+    return acc;
+},{})
+let modeWord = Object.entries(wordObject).reduce((acc, curr) => acc[1] >= curr[1] ? acc : curr)[0]
+console.log(modeWord)
+console.log(wordObject)
 
 const income = 'He earns 5000 euro from salary per month, 10000 euro annual bonus, 15000 euro online courses per month.'
 let [monthlySalary, annualBonus, monthlyCourse] = income.match(/\d+/g);

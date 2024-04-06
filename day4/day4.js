@@ -92,7 +92,7 @@ let season = (month) => {
             return 'Invalid month';
     }
 }
-console.log(season('JaNuary'));
+console.log(season('august'));
 
 
 let dayType = (input) => {
@@ -117,7 +117,7 @@ let dayType = (input) => {
 console.log(dayType('wedNesDay'));
 
 
-let daysInMonth = (input, year) => {
+export let daysInMonth = (input, year) => {
     let month = input.toLowerCase();
     let output = input.slice(0,1).toUpperCase() + input.slice(1, input.length).toLowerCase();
     switch(true) {
@@ -147,4 +147,5 @@ let daysInMonth = (input, year) => {
     }
 }
 
-console.log(daysInMonth('february', ))
+console.log(daysInMonth('february', ));
+
