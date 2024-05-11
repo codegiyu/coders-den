@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+[data-color=blue] {
+    color: blue;
+}
+
+[id=third-title] {
+    /* color: red !important; */
+    color: red;
+    /* transform: translateX(40px); */
+    translate: 40px 0;
+}
+
+[class="title text-black dark:text-white"] {
+    color: purple;
+}
+
+h1 span {
+    color: red;
+}
+
+input[placeholder=John] {
+    border: 1px solid green;
+}
+
+.text-container {
+    display: grid;
+    gap: 24px;
+    font-size: 22px;
+}
+
+.hidden {
+    display: none;
+}
+
+.numbers-container {
+    width: 90%;
+    margin: 40px auto;
+    display: grid;
+    gap: 1px;
+    grid-template-columns: repeat(10, 1fr);
+}
+
+.numbers-container .number {
+    width: 100%;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.numbers-container .prime {
+    background: red;
+    color: white;
+}
+
+.numbers-container .even {
+    background: green;
+    color: white;
+}
+
+.numbers-container .odd {
+    background: yellow;
+    color: black;
+}
+
+.accordion {
+    width: 50%;
+    margin: 40px auto;
+    border: 1px solid gainsboro;
+    border-radius: 10px;
+}
+.accordion.active .accordion-header {
+    background: cadetblue;
+    color: white;
+}
+.accordion-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: 600;
+    transition: all 300ms ease-in-out;
+}
+.toggle-accordion {
+    width: 24px;
+    aspect-ratio: 1;
+    border-radius: 6px;
+    outline: none;
+    display: grid;
+    place-items: center;
+    background: purple;
+    font-size: 20px;
+    color: white;
+    font-weight: 700;
+}
+.accordion.active .accordion-body {
+    max-height: unset;
+    padding: 20px 16px;
+}
+.accordion-body {
+    width: 100%;
+    height: auto;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 16px;
+    transition: all 300ms ease-in-out;
+}
+
+
+ul, ol {
+    padding: 20px;
+    color: brown;
+}
+
+ul {
+    list-style-type: disc;
+}
+
+ol {
+    list-style-type: decimal;
+}
+
+li > * {
+    color: blue;
+}
+
+.grid {
+    width: 50%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 50px auto;
+    border-collapse: collapse;
+}
+
+.grid-item {
+    border: 0.5px solid grey;
+    width: 100%;
+    height: 40px;
+}

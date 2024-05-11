@@ -251,10 +251,245 @@ console.log(new Date().toLocaleDateString("en-gb", {
     day: "2-digit"
 }).split("/").reverse().join("-"));
 
-console.log(new Date().toLocaleString("en-us", {
-    minute: "2-digit",
-    hour: "2-digit",
-    day: "2-digit",
-    month: "long",
-    year: "numeric"
+console.log(new Date().toLocaleDateString('en-US', {
+    month: 'short',
+    year: 'numeric',
 }))
+
+console.log(new Date(2024, "2").toLocaleString("en-us", {
+  minute: "2-digit",
+  hour: "2-digit",
+  day: "2-digit",
+  month: "long",
+  year: "numeric"
+}))
+
+const formatPhoneNum = (phone) => {
+    let formattedNum = "";
+
+    if (phone.length > 11) {
+        formattedNum = phone.slice(0,4) + " " + phone.slice(4,7) + " " + phone.slice(7,11) + " " + phone.slice(11);
+    } else {
+        formattedNum = phone.slice(0,4) + " " + phone.slice(4,7) + " " + phone.slice(7,11);
+    }
+
+    return formattedNum;
+}
+console.log(formatPhoneNum("08140629487"));
+console.log(formatPhoneNum("+2348140629487"));
+
+const getDecadeLimits = (year) => {
+    const DIVIDER = 10;
+    const startYear = Math.floor(year / DIVIDER) * DIVIDER;
+
+    return {
+        start: startYear,
+        end: startYear + 9,
+    }
+}
+console.log(getDecadeLimits(1990))
+
+const getMonthDetails = (year, month) => {
+    const currMonthStartDay = new Date(year, month, 1).getDay();
+    const prevMonthEnd = new Date(year, month, 0).getDate();
+    const currMonthEnd = month < 11 ? new Date(year, month + 1, 0).getDate() : new Date(year + 1, 0, 0).getDate();
+
+    return {
+        prevMonthEnd,
+        currMonthEnd,
+        currMonthStartDay
+    }
+}
+console.log(getMonthDetails(2024, 3));
+console.log(new Date(2024, 3, 25) - new Date(2024, 3, 26))
+
+export const patient = {
+    patient_id: 20,
+    avatar: '/images/img.png',
+    name: 'Kevin Lewis',
+    email: 'kelvin_lewis24@gmail.com',
+    age: 26,
+    gender: 'Male',
+    dob: '1997-05-17',
+    address: '1821 Birch St, Apt 2020',
+    city: 'Easton',
+    zip_code: '23456',
+    member_status: 'Active',
+    reg_date: '2022-03-29',
+    last_visit: '2023-03-29',
+    next_appointment: '2023-05-27',
+    medical_condition: 'Acne',
+    allergies: 'Latex',
+    treatment_plan: 'Topical retinoids, antibiotic therapy',
+    contact_number: '555-2000',
+    height: '175cm',
+    weight: '75kg',
+    temperature: '36.7°C',
+    blood_pressure: '115/75mmHg',
+    notes: [
+      {
+        id: 1,
+        title: 'Medication Review',
+        note: 'Patient exhibits no unusual reactions to current medication.',
+        date: '2023-03-29',
+        author: 'Dr. Smith',
+      },
+      {
+        id: 2,
+        title: 'Retinoid Treatment Follow-up',
+        note: 'Follow up on topical retinoids in one month.',
+        date: '2023-04-29',
+        author: 'Dr. Allen',
+      },
+      {
+        id: 3,
+        title: 'Dosage Adjustment Recommendation',
+        note: 'Adjustments to antibiotic dosage recommended.',
+        date: '2023-02-15',
+        author: 'Dr. Johnson',
+      },
+      {
+        id: 4,
+        title: 'Skin Examination Schedule',
+        note: 'Schedule quarterly skin examinations.',
+        date: '2023-01-10',
+        author: 'Dr. Smith',
+      },
+    ],
+    appointments: [
+      {
+        id: 1,
+        date: '2024-04-27',
+        time: '09:00',
+        type: 'Regular Check-up',
+        consultant: 'Dr. Smith',
+        note: 'Annual physical exam and review of ongoing medications. Please bring a list of all current prescriptions.',
+      },
+      {
+        id: 2,
+        date: '2024-04-26',
+        time: '10:00',
+        type: 'Dental Check',
+        consultant: 'Dr. Allen',
+        note: 'Routine dental cleaning and examination. Discussion of any gum pain or tooth sensitivity since last visit.',
+      },
+      {
+        id: 3,
+        date: '2024-04-29',
+        time: '11:00',
+        type: 'Eye Examination',
+        consultant: 'Dr. Johnson',
+        note: 'Comprehensive eye exam. Assessment of vision changes and update on prescription glasses if necessary.',
+      },
+      {
+        id: 4,
+        date: '2024-04-30',
+        time: '11:00',
+        type: 'Eye Examination',
+        consultant: 'Dr. Johnson',
+        note: 'Follow-up eye exam to monitor changes after last prescription adjustment. Possible discussion on corrective surgery options.',
+      },
+    ],
+    health_status: {
+      growth_monitoring: {
+        name: 'Growth Monitoring',
+        score: 95,
+      },
+      nutrition_status: {
+        name: 'Nutritional Status',
+        score: 85,
+      },
+      immunization_status: {
+        name: 'Immunization Status',
+        score: 100,
+      },
+      mental_health: {
+        name: 'Mental Health',
+        score: 75,
+      },
+      others: {
+        name: 'Vision, Oral, and Hearing',
+        score: 88,
+      },
+    },
+    files: [
+      {
+        id: 1,
+        name: 'Treatment Plan Overview.pdf',
+        size: '1.2MB',
+      },
+      {
+        id: 2,
+        name: 'Prescription Details.pdf',
+        size: '300KB',
+      },
+      {
+        id: 3,
+        name: 'Annual Health Report.pdf',
+        size: '800KB',
+      },
+    ],
+};
+  
+const newStats = {
+    "growth_monitoring": 98,
+    "nutrition_status": 80,
+    "immunization_status": 99,
+    "mental_health": 85,
+    "others": 85
+}
+
+function getHealthStats(patient) {
+    const healthStatus = patient.health_status;
+    const result = {};
+
+    for (let stat in healthStatus) {
+        result[stat] = healthStatus[stat].score;
+    }
+
+    return result;
+}
+
+function setHealthStats(patient, newStats) {
+    for (let stat in newStats) {
+        patient.health_status[stat].score = newStats[stat];
+    }
+}
+
+console.log(getHealthStats(patient));
+setHealthStats(patient, newStats);
+console.log(patient)
+
+console.log("11" + 1);
+console.log(11 + "1");
+console.log("11" - 1);
+console.log(11 - "1");
+console.log("10" * 2);
+console.log(10 * "2");
+console.log("10" / 2);
+console.log(10 / "2");
+
+console.log("11a" + 1);
+console.log(11 + "1a");
+console.log("11a" - 1);
+console.log(11 - "1a");
+console.log("10a" * 2);
+console.log(10 * "2a");
+console.log("10a" / 2);
+console.log(10 / "2a");
+
+
+console.log("10" - "4" - "3" - 2 + "5");
+const str5 = "JavaScript";
+console.log(str5[0]);
+console.log(str5[1]);
+console.log(str5[2]);
+
+function barell() {
+  return 70;
+}
+
+barell.diameter = "70cm";
+
+console.log(barell());
+console.log(barell.diameter);

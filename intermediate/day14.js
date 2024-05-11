@@ -12,6 +12,7 @@
 
 try {
     let num = 10
+    console.log(num.toUpperCase())
     // console.log(num.toString(60))
     // throw 'Error2' // generates an exception with a string value
     // throw 42 // generates an exception with the value 42
@@ -73,3 +74,18 @@ console.log(newObj)
 console.log(newObj.__proto__)
 newObj.__proto__ = {hello: "world"}
 console.log(newObj.__proto__)
+
+const num = '80';
+const text = "a";
+
+console.log(Number(text))
+console.log(Number(num))
+console.log(Number.isNaN(Number(text)))
+console.log(Number.isNaN(Number(num)))
+const myObj = ["Giyu", "Tomioka", {name: "Giyu", ["r"]: "seven"}]
+
+console.log(Object.keys(myObj[2]))
+
+const stringifiedObj = null //JSON.stringify(myObj)
+console.log(stringifiedObj);
+console.log(JSON.parse(stringifiedObj))

@@ -1,12 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark-mode">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Error Handling</title>
+    <link rel="stylesheet" href="./style.css">
+    <script type="module" src="./day23.js"></script>
+    <title>Document Object Model (DOM)</title>
 </head>
 <body>
-
-    <script src="./day15_2.js"></script>
+    <main>
+        <h1 class='title text-black dark:text-white' id='first-title'>First Title</h1>
+        <h1 class='title' id='second-title' data-color="blue">Second Title</h1>
+        <h1 
+            class='title bg-black text-green theme-light' 
+            id='third-title' 
+            data-color="red"
+        >
+            Third Title
+        </h1>
+        <h1><p></p></h1> 
+        <form>
+            <input type="text" name="firstname" data-tabName="first" data-chair-height="5" placeholder="John">
+            <input type="text" name="lastname" placeholder="Doe" disabled>
+        </form>
+        <div class="text-container">
+            Just some random text.
+            <p class="text">This is a ball</p>
+            <p class="text">Hello world</p>
+            <p class="text">Do you get <span class="hidden">what I'm saying</span>?</p>
+        </div>
+        <div class="numbers-container"></div>
+        <div class="accordion">
+            <div class="accordion-header">
+                <p class="question">Who are you?</p>
+                <button class="toggle-accordion">
+                    +
+                </button>
+            </div>
+            <div class="accordion-body">
+                <p class="answer">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda id quidem iste! Asperiores, velit deserunt laudantium dolores saepe voluptatum officiis facere, labore explicabo laboriosam atque consectetur quae minima temporibus. Ut facere, cupiditate quod, voluptate doloribus cumque nulla pariatur accusamus vero, id tempora laudantium ab quidem dolore quam quas voluptatem totam?
+                </p>
+            </div>
+        </div>
+        <div class="accordion">
+            <div class="accordion-header">
+                <p class="question">How do you form?</p>
+                <button class="toggle-accordion">
+                    +
+                </button>
+            </div>
+            <div class="accordion-body">
+                <p class="answer">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda id quidem iste! Asperiores, velit deserunt laudantium dolores saepe voluptatum officiis facere, labore explicabo laboriosam atque consectetur quae minima temporibus. Ut facere, cupiditate quod, voluptate doloribus cumque nulla pariatur accusamus vero, id tempora laudantium ab quidem dolore quam quas voluptatem totam?
+                </p>
+            </div>
+        </div>
+        <div class="accordion">
+            <div class="accordion-header">
+                <p class="question">Where do you belong?</p>
+                <button class="toggle-accordion">
+                    +
+                </button>
+            </div>
+            <div class="accordion-body">
+                <p class="answer">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda id quidem iste! Asperiores, velit deserunt laudantium dolores saepe voluptatum officiis facere, labore explicabo laboriosam atque consectetur quae minima temporibus. Ut facere, cupiditate quod, voluptate doloribus cumque nulla pariatur accusamus vero, id tempora laudantium ab quidem dolore quam quas voluptatem totam?
+                </p>
+            </div>
+        </div>
+        <!-- <img 
+            src="./galaxy.gif" 
+            alt="person swimming" 
+            class="image"
+        /> -->
+        <!-- <ul>
+            <li><span>kl</span></li>
+            <li><span>jk</span></li>
+            <li><span>ol</span></li>
+        </ul>
+        <ol>
+            <li><span>kl</span></li>
+            <li><span>jk</span></li>
+            <li><span>ol</span></li>
+        </ol>
+        <div class="grid">
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+        </div> -->
+    </main>
+    <!-- <script defer type="module" src="./day23.js"></script> -->
 </body>
 </html>
