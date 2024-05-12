@@ -493,3 +493,25 @@ barell.diameter = "70cm";
 
 console.log(barell());
 console.log(barell.diameter);
+
+const obj9 = { 
+  parent: 50, 
+  child: 20,
+  target: {
+    value: "blablabla"
+  }
+};
+const {parent, child, aunt} = obj9;
+console.log({obj9})
+
+const { target } = obj9;
+target.name = "firstName"
+let value = target.value;
+const valueStr = "jonoia093u20j"
+console.log(valueStr.includes(""))
+
+// target.value = target.value.slice(0, 5);
+// console.log({obj9});
+
+value = value.slice(0, 5);
+console.log({obj9})

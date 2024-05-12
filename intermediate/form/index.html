@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Registration Form</title>
+</head>
+<body>
+    <section class="page-holder">
+        <div class="image-section">
+          <div class="image-section-wrap">
+            <h2 class="fs-big">KodeCamp</h2>
+            <h3>Join our next cohort</h3>
+          </div>
+        </div>
+        <div class="form-section">
+            <div class="inner-form-box">
+                <div class="logo-section">
+                    <img src="https://kode.camp/Images/Home/kodecamp_logo.png" alt="kodecamp logo" width="59px">
+                </div>
+                <h1 class="form-title fs-big">Sign Up</h1>
+                <form id="reg-form" action="">
+                    <div class="form-row">
+                        <div class="input-box">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                            <p class="error"></p>
+                        </div>
+                        <div class="input-box">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="input-box">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="input-box radio-box">
+                            <label for="lastName">Gender</label>
+                            <div class="radio-input">
+                              <label for="" class="radio-label"><input type="radio" name="gender" checked/>Male</label>
+                              <label for="" class="radio-label"><input type="radio" name="gender"/>Female</label>
+                              <label for="" class="radio-label"><input type="radio" name="gender"/>Other</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="input-box">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" required>
+                        </div>
+                        <div class="input-box">
+                            <label for="cpassword">Confirm Password</label>
+                            <input type="password" id="cpassword" name="cpassword" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="input-box">
+                            <label for="eduLevel">Educational Level</label>
+                            <select name="eduLevel" id="eduLevel" required>
+                                <option value="" disabled selected></option>
+                                <option value="None">None</option>
+                                <option value="Primary">Primary</option>
+                                <option value="Secondary">Secondary</option>
+                                <option value="Tertiary">Tertiary</option>
+                                <option value="Others">Others</option>
+                            </select>
+                        </div>
+                        <div class="input-box">
+                            <label for="expLevel">Experience Level</label>
+                            <select name="expLevel" id="expLevel" required>
+                                <option value="" disabled selected></option>
+                                <option value="Beginner">Beginner</option>
+                                <option value="Intermediate">Intermediate</option>
+                                <option value="Expert">Expert</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row full-length">
+                      <label for="aboutYou">Tell us about you</label>
+                      <textarea name="aboutYou" id="aboutYou" rows="2" required></textarea>
+                    </div>
+                    <div class="form-row button-row">
+                      <button type="submit">Create Account</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="parent">
+            <div class="child child-1"></div>
+            <div class="child child-2"></div>
+            <div class="child child-3"></div>
+            <div class="child child-4"></div>
+            <div class="child child-5"></div>
+            <div class="child child-6"></div>
+            <div class="child child-7"></div>
+            <div class="child child-8"></div>
+            <div class="child child-9"></div>
+        </div>
+    </section>
+    <script src="./app.js"></script>
+</body>
+</html>
