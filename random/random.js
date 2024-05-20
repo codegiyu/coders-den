@@ -515,3 +515,70 @@ console.log(valueStr.includes(""))
 
 value = value.slice(0, 5);
 console.log({obj9})
+console.log(/^\+\d{1,3}\d{10}$/.test("+2348140629487"))
+
+const obj10 = {}
+obj10["firstName"] = "Tomioka";
+console.log(obj10);
+obj10["firstName"] = "Tom";
+console.log(obj10)
+
+const value2 = "1234567"
+
+console.log(/[!@#$%^&*(){}[\]:;]/.test(value2))
+console.log(/[a-z]/.test(value2))
+
+console.log(/^.{0,9}$/.test(value2))
+
+const lengthTest = value2.length >= 8
+? true
+: false;
+
+console.log({lengthTest})
+
+const object1 = {value: ""};
+const object2 = {value: ""};
+
+object1.value = "blabla";
+
+// let first = object1.value;
+// first = object2.value;
+
+object2.value = object1.value;
+
+console.log({object1, object2});
+// JoJo
+// first: {value: ""};
+// object1: "blabla";
+// object2: {value: ""};
+
+// Nonso
+// first: "";
+// object1: {value: "blabla"};
+// object2: {value: ""};
+
+const countries = {
+  nigeria: {
+    capital: this,
+    currency: "naira"
+  },
+  ghana: {
+    capital: "Accra",
+    currency: "cedis"
+  }
+}
+const selectedCountry = "ghana";
+console.log(countries[selectedCountry].currency)
+
+const planets = {
+  earth: {
+    image: "./images/earth.png",
+    acceleration: 9.8,
+  },
+  mars: {
+    image: "./images/mars.png",
+    acceleration: 11
+  }
+}
+const selectedPlanet = "EARTH"
+console.log(planets[selectedPlanet.toLowerCase()].image)

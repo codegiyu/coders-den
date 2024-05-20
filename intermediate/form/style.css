@@ -127,6 +127,36 @@ input[type="text"]:active, input[type="email"]:active, input[type="password"]:ac
   box-shadow: 0 0 0 0.3rem rgba(0, 123, 255, 0.25);
 }
 
+.password-checks {
+  width: 100%;
+  display: grid;
+  gap: 8px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.password-check-single {
+  width: 100%;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: black;
+  font-size: 12px;
+  font-family: monospace;
+}
+
+.password-check-single[data-status=failed] {
+  color: red;
+}
+
+.password-check-single[data-status=passed] {
+  color: green;
+}
+
+.password-check-single .icon {
+  font-size: 20px;
+}
+
 p.error {
     color: rgb(255, 0, 0);
     font-size: 10px;

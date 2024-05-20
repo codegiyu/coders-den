@@ -40,20 +40,78 @@
                         <div class="input-box radio-box">
                             <label for="lastName">Gender</label>
                             <div class="radio-input">
-                              <label for="" class="radio-label"><input type="radio" name="gender" checked/>Male</label>
-                              <label for="" class="radio-label"><input type="radio" name="gender"/>Female</label>
-                              <label for="" class="radio-label"><input type="radio" name="gender"/>Other</label>
+                              <label for="" class="radio-label">
+                                <input type="radio" name="gender" value="Male" checked/>Male
+                              </label>
+                              <label for="" class="radio-label">
+                                <input type="radio" name="gender" value="Female" />Female
+                              </label>
+                              <label for="" class="radio-label">
+                                <input type="radio" name="gender" value="Other" />Other
+                              </label>
                             </div>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="input-box">
                             <label for="password">Password</label>
-                            <input type="password" id="password" name="password" required>
+                            <input type="text" id="password" name="password" required>
+                            <div class="password-checks">
+                                <p class="password-check-single " data-status="">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="icon" viewBox="0 0 24 24">
+                                        <path fill="currentColor" fill-rule="evenodd" d="M12 21a9 9 0 1 0 0-18a9 9 0 0 0 0 18m-.232-5.36l5-6l-1.536-1.28l-4.3 5.159l-2.225-2.226l-1.414 1.414l3 3l.774.774z" clip-rule="evenodd"/>
+                                    </svg>
+                                    <span>
+                                        At least one (A - Z)
+                                    </span>
+                                </p>
+                                <p class="password-check-single " data-status="">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="icon" viewBox="0 0 24 24">
+                                        <path fill="currentColor" fill-rule="evenodd" d="M12 21a9 9 0 1 0 0-18a9 9 0 0 0 0 18m-.232-5.36l5-6l-1.536-1.28l-4.3 5.159l-2.225-2.226l-1.414 1.414l3 3l.774.774z" clip-rule="evenodd"/>
+                                    </svg>
+                                    <span>
+                                        At least one (a - z)
+                                    </span>
+                                </p>
+                                <p class="password-check-single " data-status="">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="icon" viewBox="0 0 24 24">
+                                        <path fill="currentColor" fill-rule="evenodd" d="M12 21a9 9 0 1 0 0-18a9 9 0 0 0 0 18m-.232-5.36l5-6l-1.536-1.28l-4.3 5.159l-2.225-2.226l-1.414 1.414l3 3l.774.774z" clip-rule="evenodd"/>
+                                    </svg>
+                                    <span>
+                                        At least one (0 - 9)
+                                    </span>
+                                </p>
+                                <p class="password-check-single " data-status="">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="icon" viewBox="0 0 24 24">
+                                        <path fill="currentColor" fill-rule="evenodd" d="M12 21a9 9 0 1 0 0-18a9 9 0 0 0 0 18m-.232-5.36l5-6l-1.536-1.28l-4.3 5.159l-2.225-2.226l-1.414 1.414l3 3l.774.774z" clip-rule="evenodd"/>
+                                    </svg>
+                                    <span>
+                                        At least one (!@#$%^&*(){}[]:;)
+                                    </span>
+                                </p>
+                                <p class="password-check-single " data-status="">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="icon" viewBox="0 0 24 24">
+                                        <path fill="currentColor" fill-rule="evenodd" d="M12 21a9 9 0 1 0 0-18a9 9 0 0 0 0 18m-.232-5.36l5-6l-1.536-1.28l-4.3 5.159l-2.225-2.226l-1.414 1.414l3 3l.774.774z" clip-rule="evenodd"/>
+                                    </svg>
+                                    <span>
+                                        At least 8 characters
+                                    </span>
+                                </p>
+                            </div>
                         </div>
                         <div class="input-box">
                             <label for="cpassword">Confirm Password</label>
-                            <input type="password" id="cpassword" name="cpassword" required>
+                            <input type="text" id="cpassword" name="cpassword" required>
+                            <div class="password-checks">
+                                <p class="password-check-single " data-status="">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="icon" viewBox="0 0 24 24">
+                                        <path fill="currentColor" fill-rule="evenodd" d="M12 21a9 9 0 1 0 0-18a9 9 0 0 0 0 18m-.232-5.36l5-6l-1.536-1.28l-4.3 5.159l-2.225-2.226l-1.414 1.414l3 3l.774.774z" clip-rule="evenodd"/>
+                                    </svg>
+                                    <span>
+                                        Matches password
+                                    </span>
+                                </p>
+                            </div>
                         </div>
                     </div>
                     <div class="form-row">
@@ -83,7 +141,7 @@
                       <textarea name="aboutYou" id="aboutYou" rows="2" required></textarea>
                     </div>
                     <div class="form-row button-row">
-                      <button type="submit">Create Account</button>
+                      <button type="submit" class="submit-btn">Create Account</button>
                     </div>
                 </form>
             </div>
